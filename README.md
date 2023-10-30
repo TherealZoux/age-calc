@@ -30,6 +30,6 @@ To get started with the Vue Calculate Age App, follow the instructions below:
     5.Open your browser and visit your local hhost
 
 # contact
-  If you have any questions or feedback, feel free to contact me at itszoux@example.com.
+  If you have any questions or feedback, feel free to contact me at itszoux@gmail.com.
 
 Happy calculating!
