@@ -21,7 +21,6 @@ To get started with the Vue Calculate Age App, follow the instructions below:
 
     1.Clone the repository:
       -->git clone https://github.com/your-username/vue-calculate-age-app.git
-
     2.Change to the project directory:
       -->cd vue-calculate-age-app
     3.Install the dependencies:
