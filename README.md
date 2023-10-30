@@ -1,29 +1,35 @@
-# calc-age
+# Vue Calculate Age App
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple Vue.js application from Frontend Mentor that calculates a person's age based on their date of birth.
 
-## Recommended IDE Setup
+# Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+  - Enter the date of birth in the input field.
+  - Click on the "Calculate Age" button 
+        to calculate the age.
+  - The calculated age will be displayed on the screen.
 
-## Customize configuration
+# Technologies Used
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+  - Vue.js
+  - HTML
+  - CSS
 
-## Project Setup
+# Getting Started
 
-```sh
-npm install
-```
+To get started with the Vue Calculate Age App, follow the instructions below:
 
-### Compile and Hot-Reload for Development
+    1.Clone the repository:
+      -->https://github.com/TherealZoux/age-calc.git
+    2.Change to the project directory:
+      -->cd vue-calculate-age-app
+    3.Install the dependencies:
+      -->npm install
+    4.Start the development server:
+      -->npm run dev
+    5.Open your browser and visit your local hhost
 
-```sh
-npm run dev
-```
+# contact
+  If you have any questions or feedback, feel free to contact me at itszoux@example.com.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Happy calculating!
