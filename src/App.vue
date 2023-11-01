@@ -1,16 +1,16 @@
 <script setup>
 import { ref } from "vue";
 
+
 const // inputs
-  birthDay = ref(""),
-  birthMonth = ref(""),
-  birthYear = ref(""),
+  birthDay = ref(),
+  birthMonth = ref(),
+  birthYear = ref(),
   // current Dates
   currentYear = ref(new Date().getFullYear()),
   currentMonth = ref(new Date().getMonth() + 1),
-  currentDay = ref(new Date().getDate());
-
-const // outputs
+  currentDay = ref(new Date().getDate()),
+ // outputs
   daysDiff = ref("--"),
   monthsDiff = ref("--"),
   yearsDiff = ref("--"),
@@ -19,27 +19,24 @@ const // outputs
 // get max dayes in this month
 const daysInMonth = (month, year) => { // Use 1 for January, 2 for February, etc.
   return new Date(year, month, 0).getDate();
-},
-  maxDayes = daysInMonth(currentMonth.value, currentYear.value);
+}, 
+maxDayes = daysInMonth(currentMonth.value, currentYear.value) +1;
 
 
-const calcYears = function () {
+const calcAge = function () {
   yearsDiff.value = currentYear.value - birthYear.value;
   monthsDiff.value = currentMonth.value - birthMonth.value;
-  daysDiff.value = currentDay.value - birthDay.value;
-  // correct month and days
-  birthMonth.value <= maxDayes 
-  
-  if (monthsDiff.value < 0) {
-    yearsDiff.value--;
-    monthsDiff.value += 12;
-    daysDiff.value += 30;
-  }
-  if (daysDiff.value < 0) {
+  daysDiff.value = currentDay.value - birthDay.value ;
+
+  if (daysDiff.value <0) {
+    daysDiff.value += maxDayes;
     monthsDiff.value--;
-    daysDiff.value += maxDayes  ;
   }
-};
+  if(currentMonth.value < birthMonth.value){
+    monthsDiff.value+=12;
+    yearsDiff.value--;
+  }  
+}
 
 const validateForm = () => {
   error.value = {};
@@ -63,9 +60,8 @@ const validateForm = () => {
     error.value.year = "This field is required";
   }
   else{
-    calcYears()
+    calcAge();
   }
-
 };
 </script>
 
@@ -74,7 +70,7 @@ const validateForm = () => {
     <form name="form" id="form" class="form" @submit.prevent="validateForm()">
       <div>
         <label for="birth-day" :class="{ error: error.day }">DAY</label>
-        <input name="birth-day" id="birthday-input" type="number" inputmode="numeric"  placeholder="DD" min="1" max="31"
+        <input name="birth-day" id="input" type="number" inputmode="numeric"  placeholder="DD" min="1" max="31"
           :class="{ error: error.day }" v-model="birthDay"  required/>
         <p v-if="error.day" :class="{ error: error.day }">
           {{ error.day }}
@@ -93,8 +89,10 @@ const validateForm = () => {
         <p :class="{ error: error.year }">{{ error.year }}</p>
       </div>
       <div class="submit-div">
-        <button class="submit" alt="calculate age button" type="submit" @click="validateForm()">
+        <button class="submit" type="submit" @click="validateForm()">
+          
           <img src="./assets/icon-arrow.svg" alt="" />
+          
        </button>
       </div>
     </form>
