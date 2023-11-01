@@ -56,11 +56,11 @@ span {
     #form{
         gap: 1rem;
     }
-    #input{
+    #birthday-input{
         width: 6rem;
         height: 4rem;
     }
-    #input::placeholder{
+    #birthday-input::placeholder{
       font-size: 18px;
     }
     .submit{
