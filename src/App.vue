@@ -74,7 +74,7 @@ const validateForm = () => {
     <form name="form" id="form" class="form" @submit.prevent="validateForm()">
       <div>
         <label for="birth-day" :class="{ error: error.day }">DAY</label>
-        <input name="birth-day" id="input" type="number" inputmode="numeric"  placeholder="DD" min="1" max="31"
+        <input name="birth-day" id="birthday-input" type="number" inputmode="numeric"  placeholder="DD" min="1" max="31"
           :class="{ error: error.day }" v-model="birthDay"  required/>
         <p v-if="error.day" :class="{ error: error.day }">
           {{ error.day }}
@@ -93,7 +93,7 @@ const validateForm = () => {
         <p :class="{ error: error.year }">{{ error.year }}</p>
       </div>
       <div class="submit-div">
-        <button class="submit" type="submit" @click="validateForm()">
+        <button class="submit" alt="calculate age button" type="submit" @click="validateForm()">
           <img src="./assets/icon-arrow.svg" alt="" />
        </button>
       </div>
