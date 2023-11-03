@@ -31,7 +31,7 @@ const calcAge = function () {
   if (daysDiff.value <0) {
     daysDiff.value += maxDayes;
     monthsDiff.value--;
-    if(mothDiff.value === 0){
+    if(monthsDiff.value < 0){
       monthsDiff.value+=12;
       yearsDiff.value--;
   } 
