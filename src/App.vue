@@ -70,7 +70,7 @@ const validateForm = () => {
     <form name="form" id="form" class="form" @submit.prevent="validateForm()">
       <div>
         <label for="birth-day" :class="{ error: error.day }">DAY</label>
-        <input name="birth-day" id="input" type="number" inputmode="numeric"  placeholder="DD" min="1" max="31"
+        <input name="birth-day" id="birthday-input" type="number" inputmode="numeric"  placeholder="DD" min="1" max="31"
           :class="{ error: error.day }" v-model="birthDay"  required/>
         <p v-if="error.day" :class="{ error: error.day }">
           {{ error.day }}
@@ -78,13 +78,13 @@ const validateForm = () => {
       </div>
       <div>
         <label for="birth-month" :class="{error: error.month}">MONTH</label>
-        <input type="text" id="input" name="birth-month" inputmode="numeric" :class="{ error: error.month }"  placeholder="MM" min="1" max="12"
+        <input type="text" id="birthday-input" name="birth-month" inputmode="numeric" :class="{ error: error.month }"  placeholder="MM" min="1" max="12"
           v-model="birthMonth" required/>
         <p :class="{error: error.month}"> {{ error.month }}</p>
       </div>
       <div>
         <label for="birth-year" :class="{error: error.year}">YEAR</label>
-        <input type="text" id="input" name="birth-year" inputmode="numeric" :class="{ error: error.year }" placeholder="YYYY" min="1800" max="2023"
+        <input type="text" id="birthday-input" name="birth-year" inputmode="numeric" :class="{ error: error.year }" placeholder="YYYY" min="1800" max="2023"
           v-model="birthYear" required/>
         <p :class="{ error: error.year }">{{ error.year }}</p>
       </div>
